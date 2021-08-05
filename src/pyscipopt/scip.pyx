@@ -3923,7 +3923,8 @@ cdef class Model:
 
         # COLUMNS
         cdef SCIP_COL** cols = SCIPgetLPCols(scip)
-        cdef int ncols = SCIPgetNLPCols(scip)
+        #cdef int ncols = SCIPgetNLPCols(scip)
+        cdef int ncols = SCIPgetNVars(scip)
 
         cdef np.ndarray[np.int32_t,   ndim=1] col_types
         cdef np.ndarray[np.float32_t, ndim=1] col_coefs
